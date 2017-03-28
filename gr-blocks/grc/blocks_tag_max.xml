@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<block>
+  <name>Tag Max</name>
+  <key>blocks_tag_max</key>
+  <import>from gnuradio import blocks</import>
+  <make>blocks.tag_max($threshold, $look_ahead, $tag_offset, $post_tag_blank, $tag_name)</make>
+
+  <callback>set_threshold($threshold)</callback>
+  <callback>set_look_ahead($look_ahead)</callback>
+  <callback>set_tag_offset($tag_offset)</callback>
+  <callback>set_post_tag_blank($post_tag_blank)</callback>
+  
+  <param>
+    <name>Threshold</name>
+    <key>threshold</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Look Ahead</name>
+    <key>look_ahead</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Tag Offset</name>
+    <key>tag_offset</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Post-Tag Blank</name>
+    <key>post_tag_blank</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Tag Name</name>
+    <key>tag_name</key>
+    <type>string</type>
+  </param>
+
+  <!-- Look ahead of 0 just tags the first threshold crossing. -->
+  <check>$look_ahead &gt; -1</check>
+  <!-- Make sure the tag blanking exceeds past the detected max, otherwise
+  we'll continually detect the same max -->
+  <check>$post_tag_blank &gt; -1*$tag_offset() - 1</check>
+
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

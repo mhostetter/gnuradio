@@ -202,6 +202,7 @@ list(APPEND gr_blocks_sources
     tcp_server_sink_impl.cc
     tuntap_pdu_impl.cc
     tag_gate_impl.cc
+    tag_max_impl.cc
     tagged_stream_align_impl.cc
     tagged_stream_mux_impl.cc
     uchar_array_to_float.cc

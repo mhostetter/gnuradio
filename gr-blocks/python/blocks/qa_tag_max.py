@@ -1,36 +1,43 @@
-# Copyright 2012 Free Software Foundation, Inc.
-#
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# 
+# Copyright 2017 Free Software Foundation, Inc.
+# 
 # This file is part of GNU Radio
-#
+# 
 # GNU Radio is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3, or (at your option)
 # any later version.
-#
+# 
 # GNU Radio is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-#
+# 
 # You should have received a copy of the GNU General Public License
 # along with GNU Radio; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
+# 
 
-install(
-  FILES
-  matrix_multiplexer.grc
-  peak_detector2.grc
-  vector_source_with_tags.grc
-  tag_max_correlation.grc
-  test_stream_mux_tags.grc
-  DESTINATION ${GR_PKG_DATA_DIR}/examples/blocks
-  COMPONENT "runtime_python"
-)
+from gnuradio import gr, gr_unittest
+from gnuradio import blocks
+import blocks_swig as blocks
 
-add_subdirectory(metadata)
-add_subdirectory(tags)
+class qa_tag_max (gr_unittest.TestCase):
 
-if(ENABLE_GR_CTRLPORT)
-add_subdirectory(ctrlport)
-endif(ENABLE_GR_CTRLPORT)
+    def setUp (self):
+        self.tb = gr.top_block ()
+
+    def tearDown (self):
+        self.tb = None
+
+    def test_001_t (self):
+        # set up fg
+        self.tb.run ()
+        # check data
+
+
+if __name__ == '__main__':
+    gr_unittest.run(qa_tag_max, "qa_tag_max.xml")
