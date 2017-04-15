@@ -546,7 +546,7 @@ namespace gr {
 
         _ncols_resize();
 
-        d_rows = ceil(static_cast<double>(len) / static_cast<double>(d_cols));
+        // d_rows = ceil(static_cast<double>(len) / static_cast<double>(d_cols));
         int irows = static_cast<int>(d_rows);
 
         d_qApplication->postEvent(d_main_gui,
