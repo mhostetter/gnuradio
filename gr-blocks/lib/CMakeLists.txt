@@ -91,6 +91,7 @@ list(APPEND gr_blocks_sources
     add_const_ii_impl.cc
     add_const_ff_impl.cc
     add_const_cc_impl.cc
+    add_tags_impl.cc
     annotator_1to1_impl.cc
     annotator_alltoall_impl.cc
     annotator_raw_impl.cc
