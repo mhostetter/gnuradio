@@ -192,6 +192,7 @@
    </cat>
    <cat>
       <name>Stream Tag Tools</name>
+      <block>blocks_add_tags</block>
       <block>blocks_tag_debug</block>
       <block>blocks_tag_gate</block>
       <block>blocks_tag_share</block>

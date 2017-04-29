@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<block>
+  <name>Add Tags</name>
+  <key>blocks_add_tags</key>
+  <import>from gnuradio import blocks</import>
+  <make>blocks.add_tags($io_type.size, $trigger_tag_key, $tag_key, $tag_values, $tag_offsets, $vlen)</make>
+
+  <param>
+    <name>IO Type</name>
+    <key>io_type</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Complex</name>
+      <key>complex</key>
+      <opt>size:gr.sizeof_gr_complex</opt>
+    </option>
+    <option>
+      <name>Float</name>
+      <key>float</key>
+      <opt>size:gr.sizeof_float</opt>
+    </option>
+    <option>
+      <name>Int</name>
+      <key>int</key>
+      <opt>size:gr.sizeof_int</opt>
+    </option>
+    <option>
+      <name>Short</name>
+      <key>short</key>
+      <opt>size:gr.sizeof_short</opt>
+    </option>
+    <option>
+      <name>Byte</name>
+      <key>byte</key>
+      <opt>size:gr.sizeof_char</opt>
+    </option>
+  </param>
+  <param>
+    <name>Trigger Tag Key</name>
+    <key>trigger_tag_key</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Tag Key</name>
+    <key>tag_key</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Tag Value Type</name>
+    <key>tag_value_type</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Float</name>
+      <key>size:gr.sizeof_float</key>
+    </option>
+  </param>
+  <param>
+    <name>Tag Values</name>
+    <key>tag_values</key>
+    <value>[]</value>
+    <type>float_vector</type>
+  </param>
+  <param>
+    <name>Tag Offsets</name>
+    <key>tag_offsets</key>
+    <value>[]</value>
+    <type>int_vector</type>
+  </param>
+  <param>
+    <name>Vec Length</name>
+    <key>vlen</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <check>$vlen &gt; 0</check>
+
+  <sink>
+    <name>in</name>
+    <type>$io_type</type>
+    <vlen>$vlen</vlen>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>$io_type</type>
+    <vlen>$vlen</vlen>
+  </source>
+</block>

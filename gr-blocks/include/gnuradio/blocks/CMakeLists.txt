@@ -78,6 +78,7 @@ install(FILES
     add_const_ii.h
     add_const_ff.h
     add_const_cc.h
+    add_tags.h
     annotator_1to1.h
     annotator_alltoall.h
     annotator_raw.h

@@ -45,6 +45,7 @@
 #include "gnuradio/blocks/add_const_vss.h"
 #include "gnuradio/blocks/add_const_vii.h"
 #include "gnuradio/blocks/add_const_vcc.h"
+#include "gnuradio/blocks/add_tags.h"
 #include "gnuradio/blocks/and_bb.h"
 #include "gnuradio/blocks/and_ss.h"
 #include "gnuradio/blocks/and_ii.h"
@@ -67,6 +68,7 @@
 %include "gnuradio/blocks/add_const_vss.h"
 %include "gnuradio/blocks/add_const_vii.h"
 %include "gnuradio/blocks/add_const_vcc.h"
+%include "gnuradio/blocks/add_tags.h"
 %include "gnuradio/blocks/and_bb.h"
 %include "gnuradio/blocks/and_ss.h"
 %include "gnuradio/blocks/and_ii.h"
@@ -88,6 +90,7 @@ GR_SWIG_BLOCK_MAGIC2(blocks, add_const_vff);
 GR_SWIG_BLOCK_MAGIC2(blocks, add_const_vss);
 GR_SWIG_BLOCK_MAGIC2(blocks, add_const_vii);
 GR_SWIG_BLOCK_MAGIC2(blocks, add_const_vcc);
+GR_SWIG_BLOCK_MAGIC2(blocks, add_tags);
 GR_SWIG_BLOCK_MAGIC2(blocks, and_bb);
 GR_SWIG_BLOCK_MAGIC2(blocks, and_ss);
 GR_SWIG_BLOCK_MAGIC2(blocks, and_ii);
