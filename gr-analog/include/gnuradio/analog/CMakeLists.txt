@@ -54,6 +54,7 @@ install(FILES
     feedforward_agc_cc.h
     fmdet_cf.h
     frequency_modulator_fc.h
+    mixer.h
     phase_modulator_fc.h
     pll_carriertracking_cc.h
     pll_freqdet_cf.h
