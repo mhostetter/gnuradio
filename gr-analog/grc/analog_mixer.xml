@@ -71,12 +71,6 @@
     <value>phase</value>
     <hide>$mode.hide_keys</hide>
   </param>
-  <param>
-    <name>Vec Length</name>
-    <key>vlen</key>
-    <value>1</value>
-    <hide>part</hide>
-  </param>
 
   <sink>
     <name>in</name>

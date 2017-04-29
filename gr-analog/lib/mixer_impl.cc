@@ -32,16 +32,16 @@ namespace gr {
 
 
     mixer::sptr
-    mixer::make(float sample_rate, bool conjugate, float init_frequency, float init_phase, enum change_mode mode, const std::string& freq_key)
+    mixer::make(float sample_rate, bool conjugate, float init_frequency, float init_phase, enum change_mode mode, const std::string& freq_key, const std::string& phase_key)
     {
       return gnuradio::get_initial_sptr
-        (new mixer_impl(sample_rate, conjugate, init_frequency, init_phase, mode, freq_key));
+        (new mixer_impl(sample_rate, conjugate, init_frequency, init_phase, mode, freq_key, phase_key));
     }
 
     /*
      * The private constructor
      */
-    mixer_impl::mixer_impl(float sample_rate, bool conjugate, float init_frequency, float init_phase, enum change_mode mode, const std::string& freq_key)
+    mixer_impl::mixer_impl(float sample_rate, bool conjugate, float init_frequency, float init_phase, enum change_mode mode, const std::string& freq_key, const std::string& phase_key)
       : gr::sync_block("mixer",
               gr::io_signature::make(1, 1, sizeof(gr_complex)),
               gr::io_signature::make(1, 1, sizeof(gr_complex))),

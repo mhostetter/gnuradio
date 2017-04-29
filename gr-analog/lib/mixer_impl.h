@@ -37,13 +37,12 @@ namespace gr {
       enum change_mode d_mode;
       std::string d_freq_key;
       std::string d_phase_key;
-      size_t d_vlen;
       float d_frequency;
       float d_phase;
       gr::fxpt_nco d_nco;
 
      public:
-      mixer_impl(float sample_rate, bool conjugate, float init_frequency, float init_phase, enum change_mode mode, const std::string& freq_key, const std::string& phase_key, size_t vlen);
+      mixer_impl(float sample_rate, bool conjugate, float init_frequency, float init_phase, enum change_mode mode, const std::string& freq_key, const std::string& phase_key);
       ~mixer_impl();
 
       // Where all the action really happens

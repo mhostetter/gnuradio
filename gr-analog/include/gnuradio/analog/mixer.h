@@ -41,14 +41,14 @@ namespace gr {
       typedef boost::shared_ptr<mixer> sptr;
 
       enum change_mode {
-        CHANGE_NEVER            = 0;
-        CHANGE_WITH_TAGS        = 1;
-        CHANGE_WITH_MESSAGES    = 2;
-      }
+        CHANGE_NEVER            = 0,
+        CHANGE_WITH_TAGS        = 1,
+        CHANGE_WITH_MESSAGES    = 2,
+      };
 
       /*!
        */
-      static sptr make(float sample_rate, bool conjugate, float init_frequency, float init_phase, enum change_mode mode, const std::string& freq_key, const std::string& phase_key, size_t vlen = 1);
+      static sptr make(float sample_rate, bool conjugate, float init_frequency, float init_phase, enum change_mode mode, const std::string& freq_key, const std::string& phase_key);
 
       virtual void set_frequency(float frequency) = 0;
       virtual void set_phase(float phase) = 0;
