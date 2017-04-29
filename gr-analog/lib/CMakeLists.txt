@@ -67,6 +67,7 @@ list(APPEND analog_sources
     feedforward_agc_cc_impl.cc
     fmdet_cf_impl.cc
     frequency_modulator_fc_impl.cc
+    mixer_impl.cc
     phase_modulator_fc_impl.cc
     pll_carriertracking_cc_impl.cc
     pll_freqdet_cf_impl.cc
