@@ -51,6 +51,7 @@
 #include "gnuradio/analog/fastnoise_source_i.h"
 #include "gnuradio/analog/fastnoise_source_f.h"
 #include "gnuradio/analog/fastnoise_source_c.h"
+#include "gnuradio/analog/mixer.h"
 #include "gnuradio/analog/noise_source_s.h"
 #include "gnuradio/analog/noise_source_i.h"
 #include "gnuradio/analog/noise_source_f.h"
@@ -96,6 +97,7 @@
 %include "gnuradio/analog/fastnoise_source_i.h"
 %include "gnuradio/analog/fastnoise_source_f.h"
 %include "gnuradio/analog/fastnoise_source_c.h"
+%include "gnuradio/analog/mixer.h"
 %include "gnuradio/analog/noise_source_s.h"
 %include "gnuradio/analog/noise_source_i.h"
 %include "gnuradio/analog/noise_source_f.h"
@@ -138,6 +140,7 @@ GR_SWIG_BLOCK_MAGIC2(analog, fastnoise_source_s);
 GR_SWIG_BLOCK_MAGIC2(analog, fastnoise_source_i);
 GR_SWIG_BLOCK_MAGIC2(analog, fastnoise_source_f);
 GR_SWIG_BLOCK_MAGIC2(analog, fastnoise_source_c);
+GR_SWIG_BLOCK_MAGIC2(analog, mixer);
 GR_SWIG_BLOCK_MAGIC2(analog, noise_source_s);
 GR_SWIG_BLOCK_MAGIC2(analog, noise_source_i);
 GR_SWIG_BLOCK_MAGIC2(analog, noise_source_f);

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<block>
+  <name>Mixer</name>
+  <key>analog_mixer</key>
+  <import>import analog</import>
+  <make>analog.mixer($sample_rate, $conjugate, $init_frequency, $init_phase, $mode, $freq_key, $phase_key, $vlen)</make>
+
+  <callback>set_frequency($init_frequency)</callback>
+  <callback>set_phase($init_phase)</callback>
+  
+  <param>
+    <name>Sample Rate</name>
+    <key>sample_rate</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Conjugate LO</name>
+    <key>conjugate</key>
+    <type>bool</type>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+  </param>
+  <param>
+    <name>Init Frequency</name>
+    <key>init_frequency</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Init Phase</name>
+    <key>init_phase</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Change Frequency</name>
+    <key>mode</key>
+    <type>enum</type>
+    <option>
+      <name>Never</name>
+      <key>0</key>
+      <opt>hide_keys:all</opt>
+      <opt>hide_msg_port:1</opt>
+    </option>
+    <option>
+      <name>With Tag</name>
+      <key>1</key>
+      <opt>hide_keys:part</opt>
+      <opt>hide_msg_port:1</opt>
+    </option>
+    <option>
+      <name>With Messages</name>
+      <key>2</key>
+      <opt>hide_keys:part</opt>
+      <opt>hide_msg_port:0</opt>
+    </option>
+  </param>
+  <param>
+    <name>Freq Key</name>
+    <key>freq_key</key>
+    <value>freq</value>
+    <hide>$mode.hide_keys</hide>
+  </param>
+  <param>
+    <name>Phase Key</name>
+    <key>phase_key</key>
+    <value>phase</value>
+    <hide>$mode.hide_keys</hide>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>freq</name>
+    <type>message</type>
+    <hide>$mode.hide_msg_port</hide>
+    <optional>1</optional>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>
